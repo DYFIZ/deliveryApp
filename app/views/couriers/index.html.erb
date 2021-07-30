@@ -1,12 +1,19 @@
-<h1>List of couriers:</h1>
 
+<%= __FILE__ %>
+<h1>List of couriers:</h1>
+<table>
 <tbody>
 <% @couriers.each do |courier| %>
   <tr>
     <td><%= courier.name %></td>
-    <td><%= courier.email %></td>
-    <td><%= link_to "Edit", "couriers/edit", data: { confirm: "Are you sure?" } %></td>
+    <td><%= courier.email %></td>  
+    <td><%= link_to "show", "show/"+courier.id.to_s %></td>
   </tr>
 <% end %>
 </tbody>
 </table>
+<div>
+  <button>
+    <%= link_to 'add courier', "new" %>
+  </button>
+</div>
