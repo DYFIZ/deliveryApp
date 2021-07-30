@@ -1,0 +1,23 @@
+<%= __FILE__ %>
+<h2>Courier information</h2>
+<table>
+<tbody>
+  <tr>
+    <td> courier name  </td>
+    <td> courier email </td> 
+  </tr>
+  <tr>
+    <td><%= courier.name %></td>
+    <td><%= courier.email %></td>  
+  </tr>
+</tbody>
+</table>
+
+<div>
+  <button>
+    <%= link_to '<<back', couriers_index_path  %>
+  </button>
+  <button>
+    <%= link_to 'edit>>', edit_path %>
+  </button>
+</div>
