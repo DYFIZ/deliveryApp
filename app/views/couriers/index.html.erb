@@ -1,2 +1,12 @@
-<h1>Couriers#index</h1>
-<p>Find me in app/views/couriers/index.html.erb</p>
+<h1>List of couriers:</h1>
+
+<tbody>
+<% @couriers.each do |courier| %>
+  <tr>
+    <td><%= courier.name %></td>
+    <td><%= courier.email %></td>
+    <td><%= link_to "Edit", "couriers/edit", data: { confirm: "Are you sure?" } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
