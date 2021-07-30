@@ -1,0 +1,9 @@
+<%= __FILE__ %>
+<h1>Update couriers profile</h1>
+<%= form_with model: courier, url: update_path, method: :post, local: true do |form| %>
+    <%=form.label "name"%><br>
+    <%=form.text_field :name, placeholder: "name" %><br>
+    <%=form.label "email"%><br>
+    <%=form.text_field :email, placeholder: "email" %><br>
+    <%=form.submit %>   
+   <% end %> 
