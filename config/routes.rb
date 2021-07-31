@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :packages
   get 'couriers/index'
   get 'couriers/new', to: 'couriers#new', as: "new"
   get 'couriers/show/:id', to: 'couriers#show', as: "show"
