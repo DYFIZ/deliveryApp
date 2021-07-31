@@ -8,6 +8,7 @@ class PackagesController < ApplicationController
 
   # GET /packages/1 or /packages/1.json
   def show
+   
   end
 
   # GET /packages/new
@@ -21,8 +22,8 @@ class PackagesController < ApplicationController
 
   # POST /packages or /packages.json
   def create
-    @package = Package.new(package_params)
-
+    @package = Package.new(package_params) 
+      
     respond_to do |format|
       if @package.save
         format.html { redirect_to @package, notice: "Package was successfully created." }
@@ -64,6 +65,6 @@ class PackagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def package_params
-      params.require(:package).permit(:tracking_number, :delivery_status)
+      params.require(:package).permit(:courier_id, :tracking_number, :delivery_status)
     end
 end
