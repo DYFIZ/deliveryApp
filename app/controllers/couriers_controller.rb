@@ -10,11 +10,14 @@ class CouriersController < ApplicationController
     end  
   end
  
+
   def show
     @courier = Courier.find(params[:id]) 
+    @deliveryInfo = Package.where(courier_id:params[:id]).order(created_at: :desc)
     respond_to do |format|
-      format.html{render :show, locals: {courier: @courier}}
-    end  
+      format.html{render :show, locals: {courier: @courier}} 
+    end 
+    
   end
 
 
